@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://mirjno1ylj2p"]
+
+[ext_resource type="Script" uid="uid://bkdq6jjuxpu46" path="res://Scripts/player.gd" id="1_6ebfn"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ffejq"]
+radius = 38.0398
+height = 133.901
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_6ebfn")
+
+[node name="shooty_part" type="Polygon2D" parent="."]
+position = Vector2(-26, 3)
+scale = Vector2(0.439999, 0.56)
+color = Color(0.75911, 0.533492, 0.804476, 1)
+polygon = PackedVector2Array(116, -19, 14, -12, 14, 7, 115, 12)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(-52, 1)
+scale = Vector2(0.439999, 0.56)
+color = Color(0.687784, 0.187848, 0.662547, 1)
+polygon = PackedVector2Array(-11, -52, -11, 47, 15.8589, 43.163, 108, 30, 110, -33)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-19, 1)
+rotation = 1.59698
+scale = Vector2(0.439999, 0.56)
+shape = SubResource("CapsuleShape2D_ffejq")
+one_way_collision_margin = 12.0
+
+[node name="shootypart" type="Node2D" parent="."]
+position = Vector2(25, 1)
+scale = Vector2(0.439999, 0.56)
