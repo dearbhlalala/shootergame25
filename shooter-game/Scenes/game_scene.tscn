@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cxrl84bjayq0m"]
+[gd_scene load_steps=8 format=3 uid="uid://cxrl84bjayq0m"]
 
 [ext_resource type="PackedScene" uid="uid://mirjno1ylj2p" path="res://Scenes/character_body_2d.tscn" id="1_2v614"]
 [ext_resource type="Script" uid="uid://cx6lwc1d8j8j" path="res://Scripts/game.gd" id="1_b6fju"]
+[ext_resource type="PackedScene" uid="uid://csqm20dsy5ht5" path="res://Scenes/ui.tscn" id="3_6h5vk"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_x87qo"]
 normal = Vector2(0.00793626, 0.999969)
@@ -39,5 +40,7 @@ shape = SubResource("WorldBoundaryShape2D_fiftr")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
+
+[node name="UI" parent="." instance=ExtResource("3_6h5vk")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -5,7 +5,7 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5o5l8"]
 
-[node name="Bullet" type="Area2D"]
+[node name="Bullet" type="Area2D" groups=["bullets"]]
 script = ExtResource("2_oduel")
 
 [node name="Circle-xxl" type="Sprite2D" parent="."]

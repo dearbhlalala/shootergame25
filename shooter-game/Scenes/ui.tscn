@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://csqm20dsy5ht5"]
+
+[ext_resource type="Script" uid="uid://82mo40dvlbp2" path="res://ScoreUI.gd" id="1_jxero"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_jxero")
+
+[node name="ScoreLabel" type="Label" parent="."]
+layout_mode = 0
+offset_right = 186.0
+offset_bottom = 76.0

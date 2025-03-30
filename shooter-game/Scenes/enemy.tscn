@@ -1,19 +1,33 @@
-[gd_scene load_steps=3 format=3 uid="uid://bmxk1y7dlu1xu"]
+[gd_scene load_steps=8 format=3 uid="uid://bmxk1y7dlu1xu"]
 
 [ext_resource type="Script" uid="uid://dwcq3ja18blok" path="res://Scripts/enemy.gd" id="1_hghv2"]
+[ext_resource type="Texture2D" uid="uid://kpi3hul00vll" path="res://images/png-transparent-drawing-cartoon-flower-blue-symmetry-plant-stem-thumbnail.png" id="2_afpow"]
+[ext_resource type="Texture2D" uid="uid://3ducapxur8uo" path="res://images/png-transparent-rose-dry-flower-dried-withered-dead-sad-dark-preserved-pressed-thumbnail.png" id="3_287tu"]
+[ext_resource type="Texture2D" uid="uid://2ft220otm84p" path="res://images/png-clipart-drawing-cartoon-flower-flower-purple-cartoon-thumbnail.png" id="3_ghaa6"]
+[ext_resource type="Texture2D" uid="uid://c4f2hc7r08xph" path="res://images/png-clipart-flower-orange-flower-cartoon-orange-symmetry-thumbnail.png" id="4_1dp5w"]
+[ext_resource type="Texture2D" uid="uid://voi60vct2atv" path="res://images/transparent-cartoon-flowers-18.png" id="5_auwsv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1f0kj"]
 radius = 22.9105
 
 [node name="Enemy" type="CharacterBody2D" groups=["enemies"]]
 script = ExtResource("1_hghv2")
+possible_textures = Array[Texture]([ExtResource("2_afpow"), ExtResource("3_ghaa6"), ExtResource("4_1dp5w"), ExtResource("5_auwsv")])
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-position = Vector2(-6, -1)
-scale = Vector2(0.48, 0.52)
-color = Color(0.461703, 0.0264587, 0, 1)
-polygon = PackedVector2Array(-4, -22, 38, 0, -4, 24)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.5, -5.96046e-08)
+scale = Vector2(0.0583333, 0.0375)
+texture = ExtResource("3_287tu")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(0.480128, 0.404853)
+shape = SubResource("CircleShape2D_1f0kj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.480128, 0.404853)
 shape = SubResource("CircleShape2D_1f0kj")
+disabled = true
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
