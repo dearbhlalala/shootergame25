@@ -1,0 +1,25 @@
+[remap]
+
+importer="Aseprite SpriteFrames Import"
+type="SpriteFrames"
+uid="uid://d00v4r1ne3m84"
+path="res://.godot/imported/blueflower.ase-dbd383de5efe3787eb27775f56e34ff3.res"
+
+[deps]
+
+source_file="res://images/blueflower.ase"
+dest_files=["res://.godot/imported/blueflower.ase-dbd383de5efe3787eb27775f56e34ff3.res"]
+
+[params]
+
+spritesheet/layout=0
+spritesheet/fixed_rows_count=1
+spritesheet/fixed_columns_count=1
+spritesheet/border_type=0
+spritesheet/trim=false
+spritesheet/ignore_empty=false
+spritesheet/merge_duplicates=false
+animation/default/name="default"
+animation/default/direction=0
+animation/default/repeat_count=0
+animation/autoplay=""

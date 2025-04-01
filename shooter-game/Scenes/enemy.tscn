@@ -1,32 +1,53 @@
-[gd_scene load_steps=8 format=3 uid="uid://bmxk1y7dlu1xu"]
+[gd_scene load_steps=7 format=3 uid="uid://bmxk1y7dlu1xu"]
 
 [ext_resource type="Script" uid="uid://dwcq3ja18blok" path="res://Scripts/enemy.gd" id="1_hghv2"]
-[ext_resource type="Texture2D" uid="uid://kpi3hul00vll" path="res://images/png-transparent-drawing-cartoon-flower-blue-symmetry-plant-stem-thumbnail.png" id="2_afpow"]
-[ext_resource type="Texture2D" uid="uid://3ducapxur8uo" path="res://images/png-transparent-rose-dry-flower-dried-withered-dead-sad-dark-preserved-pressed-thumbnail.png" id="3_287tu"]
-[ext_resource type="Texture2D" uid="uid://2ft220otm84p" path="res://images/png-clipart-drawing-cartoon-flower-flower-purple-cartoon-thumbnail.png" id="3_ghaa6"]
-[ext_resource type="Texture2D" uid="uid://c4f2hc7r08xph" path="res://images/png-clipart-flower-orange-flower-cartoon-orange-symmetry-thumbnail.png" id="4_1dp5w"]
-[ext_resource type="Texture2D" uid="uid://voi60vct2atv" path="res://images/transparent-cartoon-flowers-18.png" id="5_auwsv"]
+[ext_resource type="SpriteFrames" uid="uid://d00v4r1ne3m84" path="res://images/blueflower.ase" id="3_287tu"]
+[ext_resource type="SpriteFrames" uid="uid://cf2a3vejavs4j" path="res://images/pinkflower.ase" id="3_afpow"]
+[ext_resource type="SpriteFrames" uid="uid://cjlr8wvxtqdsg" path="res://images/redflower.ase" id="4_0830c"]
+[ext_resource type="PackedScene" uid="uid://n8vttp3a26fp" path="res://images/wiltedflower.ase" id="6_ghaa6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1f0kj"]
-radius = 22.9105
+radius = 77.0831
 
 [node name="Enemy" type="CharacterBody2D" groups=["enemies"]]
+z_index = -1
+scale = Vector2(0.695, 0.695)
 script = ExtResource("1_hghv2")
-possible_textures = Array[Texture]([ExtResource("2_afpow"), ExtResource("3_ghaa6"), ExtResource("4_1dp5w"), ExtResource("5_auwsv")])
+possible_sprite_frames = Array[SpriteFrames]([ExtResource("3_afpow"), ExtResource("3_287tu"), ExtResource("4_0830c")])
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0.5, -5.96046e-08)
-scale = Vector2(0.0583333, 0.0375)
-texture = ExtResource("3_287tu")
+[node name="AnimatedSprite2D" parent="." instance=ExtResource("6_ghaa6")]
+process_mode = 3
+texture_filter = 1
+position = Vector2(1, -1.51429)
+scale = Vector2(0.671875, 0.632589)
+autoplay = "default"
+metadata/_aseprite_wizard_interface_config_ = {
+"animation_section": false,
+"layer_section": false,
+"output_section": false,
+"pending_changes": {
+"embed_tex": true,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"should_round_fps": true,
+"slice": "",
+"source": ""
+}
+}
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
-scale = Vector2(0.480128, 0.404853)
+position = Vector2(0, -2)
+scale = Vector2(0.480128, 0.533701)
 shape = SubResource("CircleShape2D_1f0kj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(0.480128, 0.404853)
+position = Vector2(0, -3)
+scale = Vector2(0.480128, 0.524853)
 shape = SubResource("CircleShape2D_1f0kj")
 disabled = true
 

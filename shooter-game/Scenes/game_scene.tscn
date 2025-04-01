@@ -19,6 +19,7 @@ normal = Vector2(-0.999839, -0.0179183)
 script = ExtResource("1_b6fju")
 
 [node name="Player" parent="." instance=ExtResource("1_2v614")]
+z_index = 1
 position = Vector2(232, 215)
 
 [node name="Walls" type="StaticBody2D" parent="."]
