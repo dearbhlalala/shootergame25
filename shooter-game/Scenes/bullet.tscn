@@ -1,17 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://yihrnlhu5sw5"]
 
-[ext_resource type="Texture2D" uid="uid://c3bbwofyr2xle" path="res://circle-xxl.png" id="1_xjght"]
 [ext_resource type="Script" uid="uid://bcnmay1bjnbqn" path="res://Scripts/bullet.gd" id="2_oduel"]
+[ext_resource type="Texture2D" uid="uid://4l4aox2criu1" path="res://images/waterdrop.png" id="2_ycag2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5o5l8"]
 
 [node name="Bullet" type="Area2D" groups=["bullets"]]
 script = ExtResource("2_oduel")
 
-[node name="Circle-xxl" type="Sprite2D" parent="."]
-position = Vector2(2.08616e-07, -1.69873e-06)
-scale = Vector2(0.078125, 0.078125)
-texture = ExtResource("1_xjght")
+[node name="Waterdrop" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.167969, 0.167969)
+texture = ExtResource("2_ycag2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_5o5l8")
