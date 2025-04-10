@@ -5,7 +5,6 @@ extends CharacterBody2D
 @export var possible_sprite_frames: Array[SpriteFrames] = []  
 var can_be_hit: bool = true  
 
-const SPEED = 100
 
 func _ready():
 	if animated_sprite:

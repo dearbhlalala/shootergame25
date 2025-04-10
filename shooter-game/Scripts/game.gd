@@ -9,7 +9,7 @@ func _on_timer_timeout() -> void:
 	enemy.global_position = player.global_position
 
 	while enemy.global_position.distance_squared_to(player.global_position) < 10000:
-		enemy.global_position.x = randi_range(0, get_viewport_rect().size.x)
-		enemy.global_position.y = randi_range(0, get_viewport_rect().size.y)
+		enemy.global_position.x = randi_range($Player.position.x - get_viewport_rect().size.x/2, get_viewport_rect().size.x)
+		enemy.global_position.y = randi_range($Player.position.y - get_viewport_rect().size.y/2, get_viewport_rect().size.y)
 		
 		add_child(enemy)

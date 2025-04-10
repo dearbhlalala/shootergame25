@@ -66,6 +66,6 @@ shoot={
 
 [rendering]
 
-anti_aliasing/quality/msaa_2d=2
 lightmapping/lightmap_gi/use_bicubic_filter=false
 environment/defaults/default_clear_color=Color(0.441287, 0.584943, 0.358183, 1)
+anti_aliasing/quality/msaa_2d=2

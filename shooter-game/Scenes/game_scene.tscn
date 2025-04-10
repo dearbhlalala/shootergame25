@@ -1,19 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cxrl84bjayq0m"]
+[gd_scene load_steps=4 format=3 uid="uid://cxrl84bjayq0m"]
 
 [ext_resource type="PackedScene" uid="uid://mirjno1ylj2p" path="res://Scenes/character_body_2d.tscn" id="1_2v614"]
 [ext_resource type="Script" uid="uid://cx6lwc1d8j8j" path="res://Scripts/game.gd" id="1_b6fju"]
 [ext_resource type="PackedScene" uid="uid://csqm20dsy5ht5" path="res://Scenes/ui.tscn" id="3_6h5vk"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_x87qo"]
-normal = Vector2(0.00793626, 0.999969)
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_b6fju"]
-normal = Vector2(0.999927, 0.0120473)
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6h5vk"]
-normal = Vector2(-0.999839, -0.0179183)
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fiftr"]
 
 [node name="GameScene" type="Node2D"]
 script = ExtResource("1_b6fju")
@@ -22,26 +11,13 @@ script = ExtResource("1_b6fju")
 z_index = 1
 position = Vector2(232, 215)
 
-[node name="Walls" type="StaticBody2D" parent="."]
-
-[node name="Top" type="CollisionShape2D" parent="Walls"]
-position = Vector2(547, 0)
-shape = SubResource("WorldBoundaryShape2D_x87qo")
-
-[node name="Left" type="CollisionShape2D" parent="Walls"]
-shape = SubResource("WorldBoundaryShape2D_b6fju")
-
-[node name="Right" type="CollisionShape2D" parent="Walls"]
-position = Vector2(1154, 0)
-shape = SubResource("WorldBoundaryShape2D_6h5vk")
-
-[node name="Bottom" type="CollisionShape2D" parent="Walls"]
-position = Vector2(535, 649)
-shape = SubResource("WorldBoundaryShape2D_fiftr")
+[node name="Camera2D" type="Camera2D" parent="Player"]
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
-[node name="UI" parent="." instance=ExtResource("3_6h5vk")]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="CanvasLayer" instance=ExtResource("3_6h5vk")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
