@@ -1,9 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://cxrl84bjayq0m"]
+[gd_scene load_steps=8 format=3 uid="uid://cxrl84bjayq0m"]
 
 [ext_resource type="PackedScene" uid="uid://mirjno1ylj2p" path="res://Scenes/character_body_2d.tscn" id="1_2v614"]
 [ext_resource type="Script" uid="uid://cx6lwc1d8j8j" path="res://Scripts/game.gd" id="1_b6fju"]
 [ext_resource type="PackedScene" uid="uid://csqm20dsy5ht5" path="res://Scenes/ui.tscn" id="3_6h5vk"]
 [ext_resource type="Texture2D" uid="uid://p7davqqi7ty3" path="res://images/grassrepeating.png" id="3_fiftr"]
+[ext_resource type="AudioStream" uid="uid://b0fudlhc17rtv" path="res://music/Retro Water Drop 01.wav" id="3_rgj8m"]
+[ext_resource type="AudioStream" uid="uid://cjcbs37x3me8i" path="res://music/Gentle Breeze.wav" id="5_1ixah"]
+
+[sub_resource type="GDScript" id="GDScript_rgj8m"]
+script/source = "extends TextureRect
+"
 
 [node name="GameScene" type="Node2D"]
 script = ExtResource("1_b6fju")
@@ -13,6 +19,11 @@ z_index = 1
 position = Vector2(-355, -126)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="Water" type="AudioStreamPlayer2D" parent="Player"]
+position = Vector2(355, 126)
+stream = ExtResource("3_rgj8m")
+volume_db = -8.0
 
 [node name="TextureRect" type="TextureRect" parent="."]
 visibility_layer = 2
@@ -24,6 +35,7 @@ offset_right = 131449.0
 offset_bottom = 62125.0
 texture = ExtResource("3_fiftr")
 stretch_mode = 1
+script = SubResource("GDScript_rgj8m")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
@@ -38,5 +50,9 @@ offset_top = 7.0
 offset_right = 193.0
 offset_bottom = 83.0
 metadata/_edit_use_anchors_ = true
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_1ixah")
+autoplay = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

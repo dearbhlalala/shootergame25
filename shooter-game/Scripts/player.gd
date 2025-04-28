@@ -3,6 +3,10 @@ extends CharacterBody2D
 var bullet_scene = preload("res://Scenes/bullet.tscn")
 const SPEED = 200
 @onready var shooty_part = $shootypart
+@onready var shoot_sound = $Water
+
+func _ready():
+	randomize()
 
 func _physics_process(delta: float) -> void:
 	look_at(get_global_mouse_position())
@@ -16,6 +20,11 @@ func _physics_process(delta: float) -> void:
 		bullet.global_position = shooty_part.global_position
 		bullet.direction = (get_global_mouse_position() - global_position).normalized()
 		get_tree().current_scene.add_child(bullet)
+		
+		if shoot_sound:
+			shoot_sound.pitch_scale = randf_range(0.9, 1.1)
+			shoot_sound.play()
+		
 		
 		
 	move_and_slide()
