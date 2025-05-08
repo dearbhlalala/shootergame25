@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Shooter Game"
-run/main_scene="res://Scenes/game_scene.tscn"
+run/main_scene="uid://ci8e3okm8w5ku"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
